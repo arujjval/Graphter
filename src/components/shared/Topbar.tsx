@@ -18,9 +18,9 @@ export const Topbar = () => {
   return (
     <section className="topbar flex flex-row items-center	place-content-between">
 
-      <div className="flex-between py-4 px-5">
-        <Link to='/' className='flex gap-3 items-center'>
-          <img src="/assets/images/logo.svg" alt="logo" width={130} height={325}/>
+      <div className="flex-between py-4 px-5 flex-center">
+        <Link to='/' className='flex gap-3 items-center flex-center'>
+          <img src="/assets/images/Graphter-logo.png" alt="logo" width={130} height={325} />
         </Link>
       </div>
 

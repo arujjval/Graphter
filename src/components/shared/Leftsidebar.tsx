@@ -23,7 +23,7 @@ export const Leftsidebar = () => {
 
       <div className="flex flex-col gap-11">
         <Link to='/' className='flex gap-3 items-center'>
-          <img src="/assets/images/logo.svg" alt="logo" width={170} height={36}/>
+          <img src="/assets/images/Graphter-logo.png" alt="logo" width={170} height={36}/>
         </Link>
 
         <Link to={'/profile/${user.id}'} className="flex gap-3 items-center">
@@ -41,11 +41,10 @@ export const Leftsidebar = () => {
         <ul className="flex flex-col gap-6">
           {sidebarLinks.map((link: INavLink) => {
             const isActive= pathname === link.route;
-    
             return (
-              <li key={link.label} className={(isActive && "bg-primary-500") + "leftsidebar-link group"}>
+              <li key={link.label} className={(isActive?"current_leftsidebar-link": "leftsidebar-link group") + ""}>
                  <NavLink to={link.route} className='flex gap-4 items-center p-4'>
-                  <img src={link.imgURL} alt={link.label}  className={(isActive && "invert-white") + "group-hover:invert-white"}/>
+                  <img src={link.imgURL} alt={link.label}  className={(isActive? "curr_bar-img" : "group-hover:invert-white") + ""}/>
                   {link.label}
                 </NavLink>
               </li>

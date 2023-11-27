@@ -389,3 +389,19 @@ export async function searchPosts(searchTerm: string){
         console.log(error);
     }
 }
+
+export async function getTopCreators(){
+    try {
+        const creators = await databases.listDocuments(
+            appwriteConfig.databaseId,
+            appwriteConfig.userCollectionId,
+            [Query.orderDesc('$createdAt'), Query.limit(20)]
+        )
+
+        if(!creators) throw Error;
+        
+        return creators;
+    } catch (error) {
+        console.log(error);
+    }
+}
