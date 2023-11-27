@@ -1,0 +1,9 @@
+{
+    "build": {
+      "command": "next build",
+      "env": {
+        "NEXT_TSC_STRICT": false
+      }
+    }
+  }
+  

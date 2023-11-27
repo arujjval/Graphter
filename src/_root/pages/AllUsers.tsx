@@ -1,7 +1,6 @@
 import Loader from "@/components/shared/Loader";
 import { useGetTopCreators } from "@/lib/react_query/queriesAndMutations";
 import CreatorCard from "@/components/shared/CreatorCard";
-import { Models } from "appwrite";
 import { useUserContext } from "@/context/AuthContext";
 
 const AllUsers = () => {
