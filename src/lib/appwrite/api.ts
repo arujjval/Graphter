@@ -290,7 +290,7 @@ export async function updatePost(post: IUpdatePost){
             imageId: post.imageId,
         }
 
-        if(hasFileToUpdate){
+        if(hasFileToUpdate){ 
             const uploadedFile = await uploadFile(post.file[0]);
 
             if(!uploadedFile) throw Error;
@@ -352,8 +352,8 @@ export async function deletePost(postId: string, imageId: string) {
     }
 }
 
-export async function getInfinitePosts({ pageParams }: { pageParam: number }){
-    const queries : any[] = [Query.orderDesc('$updatedAt'), Query.limit(10)] 
+export async function getInfinitePosts({ pageParams }: { pageParams: number }){
+    const queries : any[] = [Query.orderDesc('$updatedAt'), Query.limit(9)] 
 
     if(pageParams){
         queries.push(Query.cursorAfter(pageParams.toString()));

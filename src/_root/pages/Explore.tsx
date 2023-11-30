@@ -28,7 +28,7 @@ const Explore = () => {
   const { ref, inView } = useInView();
   const { data: posts, fetchNextPage, hasNextPage } = useGetPosts();
 
-  const { searchValue, setSearchValue } = useState('');  
+  const [ searchValue, setSearchValue ] = useState('');  
   const debounceValue = useDebounce(searchValue, 500);
   const { data: searchedPosts, isFetching: isSearchFetching } = useSearchPosts(debounceValue);
 
@@ -46,7 +46,7 @@ const Explore = () => {
 
   console.log(posts)
 
-  const shouldShowSearchResults = searchValue === "";
+  const shouldShowSearchResults = searchValue !== '';
   const shouldShowPosts = !shouldShowSearchResults && posts.pages.every((item) => item?.documents.length === 0);
 
   return (

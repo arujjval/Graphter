@@ -2,6 +2,7 @@ import Loader from "@/components/shared/Loader";
 import { useGetTopCreators } from "@/lib/react_query/queriesAndMutations";
 import CreatorCard from "@/components/shared/CreatorCard";
 import { useUserContext } from "@/context/AuthContext";
+import { Models } from "appwrite";
 
 const AllUsers = () => {
   const { data: topCreators, isLoading: loadingCreators } = useGetTopCreators();
@@ -15,7 +16,7 @@ const AllUsers = () => {
       </div>
       {loadingCreators? (<Loader />) : (
         <div className="flex justify-around flex-wrap gap-5">
-          {topCreators?.documents.map((Creator) => (
+          {topCreators?.documents.map((Creator: Models.Document) => (
             currUser.user.id != Creator.$id && <CreatorCard key={Creator.$id} creator={Creator}/>
           ))}
         </div>

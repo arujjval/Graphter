@@ -2,9 +2,12 @@ import { Models } from 'appwrite'
 import { Link } from 'react-router-dom'
 import { Button } from '../ui/button'
 
-const CreatorCard = (Creator: Models.Document) => {
-  console.log(Creator)
+type CreatorCardProps = {
+  creator: Models.Document;
+}
 
+const CreatorCard = ({ creator: Creator }: CreatorCardProps) => {
+  
   return (
     <div className='border-2 border-opacity-50 border-slate-700 w-72 h-72 rounded-3xl flex-center'>
       <Link to={"profile/" + Creator.creator.$id} className='flex flex-col gap-4 items-center'>
